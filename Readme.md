@@ -1,0 +1,8 @@
+- Created a repository
+- Initialized the repository
+- node modules, package.json, package-lock.json
+- install express
+- create a server
+- listen to port 3200
+- install nodemon
+- Created some request handlers

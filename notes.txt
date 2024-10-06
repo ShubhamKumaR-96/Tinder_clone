@@ -1,0 +1,72 @@
+// Import the express module
+const express = require('express');
+
+// Create an instance of an Express app
+const app = express();
+
+// Define a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Start the server and listen on port 3000
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+what is dependencies
+
+In Node.js:
+Dependencies are typically listed in a file called package.json. When you install these dependencies using a package manager 
+like npm (Node Package Manager), they get added to your project and can be used in your code.
+
+Example:
+If your project requires Express.js to run a web server, Express would be a dependency.
+
+
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+Here, "express": "^4.17.1" means that Express.js version 4.17.1 (or a compatible newer version) is a dependency of the project.
+
+Types of Dependencies:
+Regular Dependencies (dependencies):
+
+These are packages that your project needs to run in production. For example, if you're building an API using Express, Express will be a regular dependency.
+Example in package.json:
+
+"dependencies": {
+  "express": "^4.17.1"
+}
+
+Development Dependencies (devDependencies):
+
+These are packages that are only required during development (like testing frameworks, linters, or build tools). 
+They are not needed when the app is running in production.
+Example in package.json:
+
+"devDependencies": {
+  "nodemon": "^2.0.7"
+}
+
+How Dependencies Work:
+
+When you run npm install, Node.js will look at the package.json file, download the listed dependencies, and store them in a folder 
+called node_modules.
+Dependencies can also have their own dependencies, creating a nested tree of packages that your project relies on.
+
+Managing Dependencies:
+npm install <package-name>: Installs a package and adds it to the dependencies section in package.json.
+npm install --save-dev <package-name>: Installs a package as a development dependency and adds it to the devDependencies section.
+Example:
+
+npm install express          # For production (dependency)
+npm install --save-dev jest  # For development (devDependency)
+
+Why Dependencies are Important:
+Dependencies save time and effort because you don’t have to write all the code from scratch. Instead, you can rely on well-tested and 
+maintained libraries that provide the functionality you need. However, it's essential to manage them carefully to avoid security risks 
+or version conflicts.
